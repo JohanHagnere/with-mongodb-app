@@ -65,7 +65,6 @@ export default async function handler(req, res) {
         case "POST":
             const movie = await dbMovie.insertOne(req.body);
             res.json({ status: 200, data: { movie: movie } })
-            // https://www.mongodb.com/docs/v6.0/reference/method/db.collection.insertOne/#db.collection.insertone--
             break;
     }
 }

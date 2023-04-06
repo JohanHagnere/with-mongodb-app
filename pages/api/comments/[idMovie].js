@@ -6,6 +6,14 @@ export default async function handler(req, res) {
     const db = client.db("sample_mflix");
     const dbComment = db.collection("comments");
 
+    const fakeComment = {
+        "name": "Jean Dupont",
+        "email": "jean.dupont@fakegmail.com",
+        "movie_id": "573a1390f29313caabcd4323",
+        "text": "Eiu quaerat fuga temporibus. Praesentium expedita sequi repellat id. Corporis minima enim ex. Provident fugit nisi dignissimos nulla nam ipsum aliquam.",
+        "date": "2002-08-18T04:56:07.000Z"
+    }
+
     switch (req.method) {
         case "GET":
             const comments = await db.collection('comments').find({
@@ -16,8 +24,9 @@ export default async function handler(req, res) {
             break;
         case "POST":
             const comment = await dbComment.insertOne(req.body);
+            console.log(req.body);
             res.json({ status: 200, data: { comment: comment } })
-            // https://www.mongodb.com/docs/v6.0/reference/method/db.collection.insertOne/#db.collection.insertone--
+            //ON EN EST LA
             break;
         case "PUT":
             const { ...fieldsToUpdate } = req.body;
