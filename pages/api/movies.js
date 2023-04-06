@@ -4,10 +4,11 @@ import clientPromise from "../../lib/mongodb";
 * @swagger
 * /api/movies:
 *   get:
-*       description: Returns movies
+*       summary: Get the movies
+*       description: Returns the 10 first movies from the database
 *       responses:
 *           200:
-*               description: Hello Movies
+*               description: Movies returned
 */
 
 
