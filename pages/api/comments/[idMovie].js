@@ -19,7 +19,6 @@ export default async function handler(req, res) {
             const comments = await db.collection('comments').find({
                 movie_id: new ObjectId(req.query.idMovie.trim())
             }).limit(10).toArray();
-            console.log(req.query);
             res.json({ status: 200, data: comments });
             break;
         case "POST":
