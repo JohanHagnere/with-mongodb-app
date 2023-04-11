@@ -25,13 +25,13 @@ export default async function handler(req, res) {
     case "PUT":
       const { ...fieldsToUpdate } = req.body;
       console.log(req.body);
-      const updated = dbComment.findOneAndUpdate(
+      let updated = dbComment.findOneAndUpdate(
         {
           _id: new ObjectId(req.query.idComment),
           movie_id: new ObjectId(req.query.idMovie),
         },
         { $set: fieldsToUpdate },
-        { returnOriginal: false }
+        { returnNewDocument: true }
         // { new: true }
         // NE RETOURNE RIEN ET DOIT RETOURNER LE DOC MODIFIE MAIS FONCTIONNE
       );

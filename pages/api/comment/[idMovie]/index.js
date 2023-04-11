@@ -33,9 +33,9 @@ export default async function handler(req, res) {
     case "POST":
       const comment = await dbComment.insertOne({
         ...req.body,
-        movie_id: new ObjectId(req.body.movie_id),
+        movie_id: new ObjectId(req.query.idMovie),
       });
-      console.log(req.body);
+      console.log(req.query);
       res.json({ status: 200, data: { comment: comment } });
       break;
   }
