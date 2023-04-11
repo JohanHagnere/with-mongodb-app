@@ -32,8 +32,6 @@ export default async function handler(req, res) {
         },
         { $set: fieldsToUpdate },
         { returnNewDocument: true }
-        // { new: true }
-        // NE RETOURNE RIEN ET DOIT RETOURNER LE DOC MODIFIE MAIS FONCTIONNE
       );
       res.json({ status: 200, data: updated });
       break;

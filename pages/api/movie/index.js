@@ -3,7 +3,7 @@ import { ObjectId } from "mongodb";
 
 /**
  * @swagger
- * /api/movies:
+ * /api/movie:
  *   post:
  *     summary: Adds a movie to the "sample_mflix" database
  *     requestBody:
