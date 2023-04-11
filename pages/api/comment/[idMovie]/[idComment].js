@@ -28,6 +28,7 @@ export default async function handler(req, res) {
         ...req.body,
         movie_id: new ObjectId(req.body.movie_id),
       });
+      console.log(req.body);
       res.json({ status: 200, data: { comment: comment } });
       break;
     case "PUT":
