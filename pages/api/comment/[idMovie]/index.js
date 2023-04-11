@@ -31,10 +31,13 @@ export default async function handler(req, res) {
 
   switch (req.method) {
     case "POST":
-      const comment = await dbComment.insertOne({
-        ...req.body,
-        movie_id: new ObjectId(req.query.idMovie),
-      });
+      const comment = await dbComment.insertOne(
+        {
+          ...req.body,
+          movie_id: new ObjectId(req.query.idMovie),
+        },
+        { new: true }
+      );
       console.log(req.query);
       res.json({ status: 200, data: { comment: comment } });
       break;
