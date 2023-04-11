@@ -22,25 +22,19 @@ export default async function handler(req, res) {
       });
       res.json({ status: 200, data: comments });
       break;
-
-    case "POST":
-      const comment = await dbComment.insertOne({
-        ...req.body,
-        movie_id: new ObjectId(req.body.movie_id),
-      });
-      console.log(req.body);
-      res.json({ status: 200, data: { comment: comment } });
-      break;
     case "PUT":
       const { ...fieldsToUpdate } = req.body;
+      console.log(req.body);
       const updated = dbComment.findOneAndUpdate(
-        { _id: new ObjectId(req.query.id) },
+        {
+          _id: new ObjectId(req.query.idComment),
+          movie_id: new ObjectId(req.query.idMovie),
+        },
         { $set: fieldsToUpdate },
         { new: true }
         // NE RETOURNE RIEN ET DOIT RETOURNER LE DOC MODIFIE MAIS FONCTIONNE
       );
       res.json({ status: 200, data: updated });
-      // https://www.mongodb.com/docs/v6.0/reference/method/db.collection.findOneAndUpdate/#db.collection.findoneandupdate--
       break;
     case "DELETE":
       await dbComment.deleteOne({ _id: new ObjectId(req.query.id) });
