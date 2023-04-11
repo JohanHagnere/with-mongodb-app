@@ -31,13 +31,17 @@ export default async function handler(req, res) {
           movie_id: new ObjectId(req.query.idMovie),
         },
         { $set: fieldsToUpdate },
-        { new: true }
+        { returnOriginal: false }
+        // { new: true }
         // NE RETOURNE RIEN ET DOIT RETOURNER LE DOC MODIFIE MAIS FONCTIONNE
       );
       res.json({ status: 200, data: updated });
       break;
     case "DELETE":
-      await dbComment.deleteOne({ _id: new ObjectId(req.query.id) });
+      await dbComment.deleteOne({
+        _id: new ObjectId(req.query.idComment),
+        movie_id: new ObjectId(req.query.idMovie),
+      });
       res.json({ status: 200, message: "comment successfully deleted" });
       break;
   }
