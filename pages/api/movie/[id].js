@@ -12,50 +12,33 @@ import { ObjectId } from "mongodb";
  *          type: string
  *        title:
  *          type: string
+ *        year:
+ *          type: integer
+ *        runtime:
+ *          type: integer
+ *        released:
+ *          type: date
+ *        poster:
+ *          type: string
+ *        plot:
+ *          type: string
+ *        fullplot:
+ *          type: string
+ *        lastupdated:
+ *          type: date
+ *        type:
+ *          type: string
+ *        directors:
+ *          type: string
  *      required:
  *          - _id
  *          - title
- *
- *
- *
- *A FAIRE CONTINUER INDENTATION EN FONCTION DES VALEURS DESSOUS PUIS LES EFFACER
- *
- *
- * Movie:
- *      type: object
- *    properties:
- *        _id:
- *           type: string
- *         title:
- *           type: string
- *        year:
- *           type: integer
- *        genre:
- *           type: array
- *          items:
- *             type: string
- *        rated:
- *           type: string
- *         runtime:
- *           type: integer
- *        cast:
- *           type: array
- *          items:
- *             type: string
- *       required:
- *         - _id
- *        - title
- *        - year
- *        - genre
- *        - rated
- *        - runtime
- *        - cast
  *    NotFound:
  *       type: object
- *      properties:
+ *       properties:
  *        message:
  *          type: string
- *      required:
+ *       required:
  *        - message
  *    MovieInput:
  *      type: object
