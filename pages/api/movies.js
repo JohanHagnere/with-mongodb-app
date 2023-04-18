@@ -5,7 +5,9 @@ import clientPromise from "../../lib/mongodb";
  * /api/movies:
  *   get:
  *     summary: Retrieve a list of movies
- *     description: Retrieves a list of the 10 most recent movies from the "sample_mflix" database
+ *     description: Retrieves a list of the 10 most recent movies from the "sample_mflix" database.
+ *     tags:
+ *       - Movies
  *     responses:
  *       200:
  *         description: A list of movies

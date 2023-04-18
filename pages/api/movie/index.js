@@ -6,6 +6,8 @@ import { ObjectId } from "mongodb";
  * /api/movie:
  *   post:
  *     summary: Adds a movie to the "sample_mflix" database
+ *     tags:
+ *       - Movie
  *     requestBody:
  *       required: true
  *       content:

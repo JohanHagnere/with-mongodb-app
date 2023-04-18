@@ -10,26 +10,38 @@ import { ObjectId } from "mongodb";
  *      properties:
  *        _id:
  *          type: string
- *        title:
- *          type: string
- *        year:
- *          type: integer
- *        runtime:
- *          type: integer
- *        released:
- *          type: date
- *        poster:
- *          type: string
  *        plot:
  *          type: string
- *        fullplot:
+ *        genres:
+ *          type: array
+ *        runtime:
+ *          type: integer
+ *        cast:
+ *          type: array
+ *        num_mflix_comments:
+ *          type: integer
+ *        poster:
+ *          type: string
+ *        title:
  *          type: string
  *        lastupdated:
  *          type: date
- *        type:
- *          type: string
+ *        languages:
+ *          type: array
+ *        released:
+ *          type: date
  *        directors:
- *          type: string
+ *          type: array
+ *        rated:
+ *          type : string
+ *        awards:
+ *          type: object
+ *        year:
+ *          type: integer
+ *        imdb:
+ *          type: object
+ *        countries:
+ *          type: array
  *      required:
  *          - _id
  *          - title
@@ -74,6 +86,8 @@ import { ObjectId } from "mongodb";
  *   get:
  *     summary: Get a movie by ID
  *     description: Retrieve a movie from the database by ID.
+ *     tags:
+ *       - Movie
  *     parameters:
  *       - in: path
  *         name: id
@@ -97,6 +111,8 @@ import { ObjectId } from "mongodb";
  *   put:
  *     summary: Update a movie by ID
  *     description: Update a movie in the database by ID.
+ *     tags:
+ *       - Movie
  *     parameters:
  *       - in: path
  *         name: id
@@ -125,6 +141,8 @@ import { ObjectId } from "mongodb";
  *   delete:
  *     summary: Delete a movie by ID
  *     description: Delete a movie from the database by ID.
+ *     tags:
+ *       - Movie
  *     parameters:
  *       - in: path
  *         name: id
