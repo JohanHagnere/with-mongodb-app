@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import FindMovieById from "./FindMovieById";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -13,13 +12,12 @@ function Movies() {
 
   return (
     <>
-      <FindMovieById />
       <h2>Movies</h2>
       <div
         className="flex__cards"
         style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}
       >
-        {movies.map((movie) => (
+        {movies?.map((movie) => (
           <div
             className="card"
             key={movie.title}

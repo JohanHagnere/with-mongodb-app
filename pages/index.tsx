@@ -2,6 +2,7 @@ import Head from "next/head";
 import clientPromise from "../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
 import Movies from "../app/components/Movies";
+import Navbar from "../app/components/Navbar";
 
 export async function getServerSideProps(_context: any) {
   try {
@@ -35,7 +36,7 @@ export default function Home({
         <title>Mflix</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <main>
         <h1 className="title">Welcome to Mflix!</h1>
 
