@@ -16,35 +16,14 @@ import { ObjectId } from "mongodb";
  *         required: true
  *         schema:
  *           type: string
+ *           example: 573a1390f29313caabcd4323
  *     requestBody:
  *       description: Request body containing the comment data.
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *                 description: Name of the user who created the comment.
- *                 example: John Doe
- *               email:
- *                 type: string
- *                 description: Email of the user who created the comment.
- *                 example: johndoe@mongo.com
- *               movie_id:
- *                 type: integer
- *                 description: Id of the movie to create a comment for.
- *                 example: 573a1390f29313caabcd4323
- *               text:
- *                 type: string
- *                 description: Text content of the comment.
- *                 example: This movie was great!
- *               date:
- *                  type: string
- *                  format: date-time
- *                  description: Date and time the comment was created.
- *                  example: "2022-04-18T14:02:57.000Z"
+ *              $ref: '#/components/schemas/Comment'
  *     responses:
  *       '200':
  *         description: Comment successfully created.
@@ -71,7 +50,6 @@ export default async function handler(req, res) {
         },
         { new: true }
       );
-      console.log(req.query);
       res.json({ status: 200, data: { comment: comment } });
       break;
   }
