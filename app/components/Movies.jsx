@@ -30,11 +30,13 @@ function Movies() {
             }}
           >
             <h3 className="card__title">{movie.title}</h3>
-            <img
-              src={movie.poster}
-              alt={movie.title}
-              style={{ width: "100%" }}
-            />
+            {movie.poster && (
+              <img
+                src={movie.poster}
+                alt={movie.title}
+                style={{ width: "100%" }}
+              />
+            )}
             <p className="card__plot">{movie.plot}</p>
           </div>
         ))}

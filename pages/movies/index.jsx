@@ -2,6 +2,7 @@ import React from "react";
 import FindMovieById from "../../app/components/FindMovieById";
 import PostMovie from "../../app/components/PostMovie";
 import DeleteMovie from "../../app/components/DeleteMovie";
+import UpdateMovie from "../../app/components/UpdateMovie";
 import Navbar from "../../app/components/Navbar";
 
 const index = () => {
@@ -14,6 +15,8 @@ const index = () => {
       <PostMovie />
       <h2>Delete a movie from the database</h2>
       <DeleteMovie />
+      <h2>Update a movie from the database</h2>
+      <UpdateMovie />
     </>
   );
 };
